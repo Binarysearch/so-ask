@@ -1,0 +1,79 @@
+{
+    "apis" : [
+        {
+            "location" : "/api/get-questions.pgsql",
+            "pattern" : "/api/get-questions",
+            "priority" : 1
+        },
+        {
+            "location" : "/api/create-question.pgsql",
+            "pattern" : "/api/create-question",
+            "priority" : 1
+        },
+        {
+            "location" : "/api/delete-question.pgsql",
+            "pattern" : "/api/delete-question",
+            "priority" : 1
+        },
+        {
+            "location" : "/api/edit-question.pgsql",
+            "pattern" : "/api/edit-question",
+            "priority" : 1
+        },
+        {
+            "location" : "/api/get-question.pgsql",
+            "pattern" : "/api/get-question",
+            "priority" : 1
+        },
+        {
+            "location" : "/api/answer-question.pgsql",
+            "pattern" : "/api/answer-question",
+            "priority" : 1
+        }
+    ],
+    "files" : [
+        {"location" : "/files/question_list.html"},
+        {"location" : "/files/question.html"}
+    ],
+    "templates" : [
+        {
+            "location" : "/templates/so_ask.html",
+            "name" : "so-ask",
+            "variables" : ["$TITLE", "$CONTENT"]
+        }
+    ],
+    "pages" : [
+        {
+            "path" : "/questions",
+            "template" : "so-ask",
+            "variables" : [
+                {
+                    "name" : "$TITLE",
+                    "content" : "Mis preguntas"
+                },
+                {
+                    "name" : "$CONTENT",
+                    "file" : "/files/question_list.html"
+                }
+            ]
+        },
+        {
+            "path" : "/question",
+            "template" : "so-ask",
+            "variables" : [
+                {
+                    "name" : "$TITLE",
+                    "content" : "Pregunta"
+                },
+                {
+                    "name" : "$CONTENT",
+                    "file" : "/files/question.html"
+                }
+            ]
+        }
+
+    ],
+    "sql" : [
+        "schema.sql"
+    ]
+}

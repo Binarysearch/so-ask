@@ -44,6 +44,20 @@
     ],
     "pages" : [
         {
+            "path" : "/",
+            "template" : "so-ask",
+            "variables" : [
+                {
+                    "name" : "$TITLE",
+                    "content" : "So-Ask Inicio"
+                },
+                {
+                    "name" : "$CONTENT",
+                    "file" : "/files/index.html"
+                }
+            ]
+        },
+        {
             "path" : "/questions",
             "template" : "so-ask",
             "variables" : [

@@ -1,3 +1,83 @@
-$TITLE
-<hr>
-$CONTENT
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>$TITLE</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" href="/static/css/style.css">
+    <link rel="stylesheet" type="text/css" href="/static/css/bulma.min.css">
+    <link rel="stylesheet" type="text/css" href="/static/css/jquery-ui.css">
+    <link href="/static/font_awesome/css/all.css" rel="stylesheet">
+    <script src='/static/js/jquery-3.3.1.min.js'></script>
+    <script src='/static/js/dccms.js'></script>
+    <script src='/static/js/jquery-ui.js'></script>
+</head>
+<body class='has-navbar-fixed-top'>
+    <nav class="navbar is-fixed-top is-dark" role="navigation" aria-label="main navigation">
+        <div class="navbar-brand">
+            <a class="navbar-item" href="/">
+                <h1 class="has-text-centered title is-3"><span class="has-text-info">SO</span>-<span class="has-text-success">ASK</span></h1>
+            </a>
+            
+            <a role="button" class="navbar-burger" aria-label="menu" aria-expanded="false">
+                <span aria-hidden="true"></span>
+                <span aria-hidden="true"></span>
+                <span aria-hidden="true"></span>
+            </a>
+        </div>
+        <div class="navbar-menu">
+            <div class="navbar-start">
+                <a href="/questions" class="navbar-item" title='Preguntas'>
+                    Preguntas
+                </a>
+                
+            </div>
+
+            <div class="navbar-end">
+            <!-- navbar items -->
+            </div>
+        </div>
+    </nav>
+    <div>
+        $CONTENT
+    </div>
+    <div class="modal" id="modal-error">
+        <div class="modal-background animated fadeIn"></div>
+        <div class="modal-content animated zoomIn">
+            <div class="box">
+                <h1 class="title is-5 has-text-centered has-text-danger">Error <span class='code'></span></h1>
+                <p><b>Mensaje: </b><span class="message"></span></p>
+                <div>
+                    <b>Detalle: </b><br>
+                    <pre class="where"></pre>
+                </div>
+                <div class="field is-grouped is-grouped-right">
+                    <button class="control button button-modal-close">
+                        Aceptar
+                    </button>
+                </div>
+            </div>
+            <div class="modal-close"></div>
+        </div>
+    </div>
+</body>
+<script>
+$(document).ready(function(){
+    $('.modal-background').on('click', function(){
+        $(this).closest('.is-active').removeClass('is-active');
+    });
+    $('.modal-close').on('click', function(){
+        $(this).closest('.is-active').removeClass('is-active');
+    });
+    $('.button-modal-close').on('click', function(){
+        $(this).closest('.is-active').removeClass('is-active');
+    });
+    $('.navbar-item').each(function(e){
+        if(window.location.pathname == $(this).attr('href')){
+            $(this).addClass('is-active');
+        }
+    });
+});
+</script>
+</html>

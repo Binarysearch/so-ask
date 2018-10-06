@@ -32,6 +32,7 @@
         }
     ],
     "files" : [
+        {"location" : "/files/index.html"},
         {"location" : "/files/question_list.html"},
         {"location" : "/files/question.html"}
     ],

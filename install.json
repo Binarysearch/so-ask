@@ -31,10 +31,10 @@
             "priority" : 1
         }
     ],
-    "files" : [
-        {"location" : "/files/index.html"},
-        {"location" : "/files/question_list.html"},
-        {"location" : "/files/question.html"}
+    "documents" : [
+        {"location" : "/documents/index.html"},
+        {"location" : "/documents/question_list.html"},
+        {"location" : "/documents/question.html"}
     ],
     "templates" : [
         {
@@ -54,7 +54,7 @@
                 },
                 {
                     "name" : "$CONTENT",
-                    "file" : "/files/index.html"
+                    "document" : "/documents/index.html"
                 }
             ]
         },
@@ -68,7 +68,7 @@
                 },
                 {
                     "name" : "$CONTENT",
-                    "file" : "/files/question_list.html"
+                    "document" : "/documents/question_list.html"
                 }
             ]
         },
@@ -82,7 +82,7 @@
                 },
                 {
                     "name" : "$CONTENT",
-                    "file" : "/files/question.html"
+                    "document" : "/documents/question.html"
                 }
             ]
         }
